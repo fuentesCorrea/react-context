@@ -12,6 +12,7 @@ const ThemeProvider = (props) => {
     const [theme, setTheme] = React.useState(themes)
     const [nombre, setNombre] = React.useState('')
     const [saludo, setSaludo] = React.useState('Principal')
+    const [var1, serVar1] = React.useState('www')
     const temas = (valor) => {
         setTheme(valor)
         localStorage.setItem('temas', JSON.stringify(valor))
@@ -29,7 +30,8 @@ const ThemeProvider = (props) => {
 
     }, [])
 
-    return ( < ThemeContext.Provider value = {
+    return ( <
+        ThemeContext.Provider value = {
             { theme, temas, nombre, setNombre, setSaludo, saludo }
         } > { props.children } <
         /ThemeContext.Provider>
